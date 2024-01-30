@@ -2,12 +2,23 @@ import java.util.Scanner
 
 fun main(args: Array<String>) {
     var Input = Scanner(System.`in`)
-    val seconds = Input.nextInt()
 
-    val hours = seconds/3600
-    val mints = (seconds-(hours*3600))/60
-    val second = (seconds-(hours*3600)-(mints*60))
+    var sum = 0
+    var num: Int
+
+    println("Enter numbers to add (enter 0 to stop):")
+
+    while (Input.hasNextInt()) {
+         num = Input.nextInt()
+        if (num == 0) break  // Exit the loop if 0 is entered
+        sum += num
+    }
+
+    val hours = sum/3600
+    val mints = (sum-(hours*3600))/60
+    val second = (sum-(hours*3600)-(mints*60))
 
 
-    println("$hours : $mints : $second")
+    println("HOURS( $hours ) : MINITUS( $mints ) : SECOND( $second )")
 }
+
